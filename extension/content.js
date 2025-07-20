@@ -62,7 +62,7 @@ function injectButton() {
 
             const emailContent = getEmailContent();
 
-            const response = await fetch('http://localhost:8080/api/email/generate', {
+            const response = await fetch('https://email-writer-api-dthh.onrender.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
