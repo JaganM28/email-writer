@@ -1,13 +1,9 @@
 services:
   - type: web
     name: email-writer-api
-    
-    runtime: java
     plan: free
+    # Change the runtime to 'docker'
+    runtime: docker
+    # The root directory is still 'backend' because that's where the Dockerfile is
     rootDir: backend
-    buildCommand: "./mvnw clean package -DskipTests"
-    startCommand: "java -jar target/email-writer-sb-0.0.1-SNAPSHOT.jar"
-    envVars:
-    
-      - key: JAVA_VERSION
-        value: 17
+    # We no longer need buildCommand or startCommand because the Dockerfile handles it.
